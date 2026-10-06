@@ -1,15 +1,6 @@
-# 🏢 PassTrack — Digital Visitor Pass Management System
+# PassTrack — Digital Visitor Pass Management System
 
-[![MERN Stack](https://img.shields.io/badge/Stack-MongoDB%20|%20Express%20|%20React%20|%20Node.js-green.svg)](#-tech-stack)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](#)
-[![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg)](#)
-[![Version](https://img.shields.io/badge/Version-1.0.0-orange.svg)](#)
-
-> An enterprise-grade, full-stack **Visitor Pass Management System (VPMS)** built using the **MERN Stack** (MongoDB, Express.js, React, Node.js). Designed to eliminate manual paper logbooks, automate guest pre-registration, issue secure **QR-code badges with 1-page printable PDF badges**, and provide live **security check-in/out gate tracking**.
-
----
-
-## 📑 Table of Contents
+##  Table of Contents
 
 1. [Problem Statement & Solution](#-problem-statement--solution)
 2. [Tech Stack](#-tech-stack)
@@ -26,21 +17,21 @@
 
 ---
 
-## 🎯 Problem Statement & Solution
+##  Problem Statement & Solution
 
 Traditional workplaces and institutions often rely on manual paper logbooks at front desks. This manual process causes several operational bottlenecks:
 
 | Problem with Manual Registers | PassTrack Digital Solution |
 | :--- | :--- |
-| ❌ Slow, crowded entry queues at security gates | ✅ **Instant QR-code scanning** via camera or fast-entry codes |
-| ❌ Lost visitor history and missing ID records | ✅ **Digital visitor profiles** with ID proof and webcam photo capture |
-| ❌ No host approval mechanism before visitor arrival | ✅ **Host employee 1-click approval** & rejection workflow |
-| ❌ Zero visibility on who is currently inside the building | ✅ **Real-time in-building headcount** monitor |
-| ❌ Manual paperwork with no exportable audit trails | ✅ **1-Click CSV export** and automated email/SMS alerts |
+|  Slow, crowded entry queues at security gates |  **Instant QR-code scanning** via camera or fast-entry codes |
+|  Lost visitor history and missing ID records |  **Digital visitor profiles** with ID proof and webcam photo capture |
+|  No host approval mechanism before visitor arrival |  **Host employee 1-click approval** & rejection workflow |
+|  Zero visibility on who is currently inside the building |  **Real-time in-building headcount** monitor |
+|  Manual paperwork with no exportable audit trails |  **1-Click CSV export** and automated email/SMS alerts |
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Frontend (Client)
 - **Framework:** React 18 with Vite (Ultra-fast HMR)
@@ -60,7 +51,7 @@ Traditional workplaces and institutions often rely on manual paper logbooks at f
 
 ---
 
-## 🏛️ System Architecture
+##  System Architecture
 
 ```mermaid
 graph TD
@@ -79,20 +70,20 @@ graph TD
 
 ---
 
-## 👥 User Roles & Access Control
+##  User Roles & Access Control
 
 The application implements a secure **Role-Based Access Control (RBAC)** model:
 
 | Role | Permissions & Responsibilities |
 | :--- | :--- |
-| 🛡️ **Admin** | Manages staff accounts, views company-wide analytics, purpose distribution charts, notification audit streams, and exports CSV reports. |
-| 👮 **Security Guard** | Operates the gate scanner, verifies visitor temperature & belongings, logs entry/exit, monitors live active headcount, and issues on-spot walk-in passes. |
-| 💼 **Host Employee** | Invites guests, reviews pending appointment requests with 1-click Approve/Reject, and receives arrival alerts. |
-| 👤 **Visitor** | Pre-registers visits, verifies phone/email via OTP, captures ID photos, views digital passes, and prints/downloads PDF badges. |
+|  **Admin** | Manages staff accounts, views company-wide analytics, purpose distribution charts, notification audit streams, and exports CSV reports. |
+|  **Security Guard** | Operates the gate scanner, verifies visitor temperature & belongings, logs entry/exit, monitors live active headcount, and issues on-spot walk-in passes. |
+|  **Host Employee** | Invites guests, reviews pending appointment requests with 1-click Approve/Reject, and receives arrival alerts. |
+|  **Visitor** | Pre-registers visits, verifies phone/email via OTP, captures ID photos, views digital passes, and prints/downloads PDF badges. |
 
 ---
 
-## 🌟 Key Features & Bonus Implementations
+##  Key Features & Bonus Implementations
 
 ### Core Requirements (40 Marks)
 - [x] **JWT Authentication & Authorization:** Secure token-based session with role guards.
@@ -103,7 +94,7 @@ The application implements a secure **Role-Based Access Control (RBAC)** model:
 - [x] **Notifications (Email/SMS):** Automated alert triggers on appointment approval, gate check-in, and departure.
 - [x] **Dashboard & Reports:** Real-time KPI summary cards, purpose distribution charts, search/filter logs, and CSV export.
 
-### 🎁 Bonus Challenges Implemented (10 Marks)
+###  Bonus Challenges Implemented (10 Marks)
 - [x] **OTP-Based Verification:** 6-digit OTP phone/email verification during visitor pre-registration.
 - [x] **Multi-Gate / Multi-Location Support:** Entry tracking across *Gate 1 (Main Entrance)*, *East Gate (Tower B)*, and *Service Gate 3*.
 - [x] **Live In-Building Headcount:** Real-time monitor of active visitors currently on premise.
@@ -111,7 +102,7 @@ The application implements a secure **Role-Based Access Control (RBAC)** model:
 
 ---
 
-## 🚀 Quick Setup & Installation Guide
+##  Quick Setup & Installation Guide
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/) (v18+ or v20+ recommended)
@@ -163,12 +154,12 @@ Run both Express Backend (`http://localhost:5050`) and React Frontend (`http://l
 npm run dev
 ```
 
-- 🌐 **Frontend Application:** [http://localhost:5173](http://localhost:5173)
-- 📡 **Backend Health Check:** [http://localhost:5050/api/health](http://localhost:5050/api/health)
+-  **Frontend Application:** [http://localhost:5173](http://localhost:5173)
+-  **Backend Health Check:** [http://localhost:5050/api/health](http://localhost:5050/api/health)
 
 ---
 
-## 🔑 Demo Login Credentials
+##  Demo Login Credentials
 
 The database seed script automatically creates the following accounts:
 
@@ -179,11 +170,11 @@ The database seed script automatically creates the following accounts:
 | **Host Employee** | `alex.morgan@techcorp.com` | `employee123` | Host invites, approve visitor appointment requests |
 | **Visitor** | `visitor@example.com` | `visitor123` | View digital pass, download badge, pre-register |
 
-> 💡 **Tip for Examiners:** Use the **1-Click Demo Bar** at the top of the browser window to switch roles instantly without typing passwords.
+>  **Tip for Examiners:** Use the **1-Click Demo Bar** at the top of the browser window to switch roles instantly without typing passwords.
 
 ---
 
-## 🧪 Step-by-Step Testing Walkthrough
+##  Step-by-Step Testing Walkthrough
 
 Follow this test workflow to verify all system features end-to-end:
 
@@ -193,7 +184,7 @@ Follow this test workflow to verify all system features end-to-end:
 3. **Step 2 (Photo):** Click **"Take Snapshot"** to capture a webcam photo (or upload an image).
 4. **Step 3 (OTP Verification):** Click **"Send OTP"**, enter the simulated 6-digit OTP code, and click **"Verify & Continue"**.
 5. **Step 4 (Appointment Details):** Select Host Employee **"Alex Morgan"**, select purpose (*Client Meeting*), choose date & time, and submit.
-6. ✅ **Result:** An Appointment Reference Number is generated with status `Pending Approval`.
+6.  **Result:** An Appointment Reference Number is generated with status `Pending Approval`.
 
 ---
 
@@ -201,7 +192,7 @@ Follow this test workflow to verify all system features end-to-end:
 1. Switch to **Host Employee** (`alex.morgan@techcorp.com` / `employee123`).
 2. Go to **"Appointments"** (`/appointments`).
 3. Under the **Pending** tab, locate the visitor request and click **"Approve"**.
-4. ✅ **Result:** Status changes to `Approved`, generating a digital pass with a unique QR code.
+4.  **Result:** Status changes to `Approved`, generating a digital pass with a unique QR code.
 
 ---
 
@@ -218,14 +209,14 @@ Follow this test workflow to verify all system features end-to-end:
 2. Navigate to **"Gate Scanner"** (`/check-in-out`).
 3. Select Gate: **"Main Entrance - Gate 1"**.
 4. Enter the Pass Code (or click **"Open QR Scanner"** to scan with camera), enter visitor temperature (`98.6°F`) and belongings (*"MacBook Pro"*), and click **"Process Check-In"**.
-5. ✅ **Result:** Check-in is logged, and the **"Currently In Building"** active headcount increments.
+5.  **Result:** Check-in is logged, and the **"Currently In Building"** active headcount increments.
 
 ---
 
 ### Scenario 5: Security Gate Check-Out
 1. On the **"Gate Scanner"** page, find the visitor in the **"Currently In Building"** list.
 2. Click **"Quick Check-Out"** (or scan pass in Check-Out mode).
-3. ✅ **Result:** Departure timestamp and visit duration are recorded.
+3.  **Result:** Departure timestamp and visit duration are recorded.
 
 ---
 
@@ -237,7 +228,7 @@ Follow this test workflow to verify all system features end-to-end:
 
 ---
 
-## 📡 REST API Documentation
+##  REST API Documentation
 
 ### Authentication (`/api/auth`)
 | Method | Endpoint | Description | Access |
@@ -285,7 +276,7 @@ Follow this test workflow to verify all system features end-to-end:
 
 ---
 
-## 🗄️ Database Schema Overview
+##  Database Schema Overview
 
 ```
 ┌─────────────────┐       ┌─────────────────┐       ┌─────────────────┐
@@ -326,7 +317,7 @@ Follow this test workflow to verify all system features end-to-end:
 
 ---
 
-## 📁 Project Directory Structure
+##  Project Directory Structure
 
 ```
 final_assignment/
@@ -387,20 +378,3 @@ final_assignment/
             ├── UserManagementPage.jsx # Admin staff management portal
             └── ProfilePage.jsx    # User profile settings & password update
 ```
-
----
-
-## 💯 Evaluation Rubric & Grading Checklist
-
-| Evaluation Criteria | Mark Distribution | Implemented Details | Status |
-| :--- | :---: | :--- | :---: |
-| **Functionality** | **40 Marks** | Full JWT Auth, Pre-registration with photo, Host 1-click approval, QR Pass generation, PDF badge download, Security webcam check-in/out, and Email/SMS notifications. | ✅ 100% Complete (40/40) |
-| **Code Quality** | **20 Marks** | Clean MVC architecture, structured API routes, modular components, extensive trainee comments, and robust error handling. | ✅ 100% Complete (20/20) |
-| **UI/UX Usability** | **20 Marks** | Clean light classy design system, responsive grid layouts, 1-page printable ID badge, and live camera QR modal. | ✅ 100% Complete (20/20) |
-| **Extra Features** | **10 Marks** | 6-digit OTP verification, multi-gate support (Gate 1, East Gate, Service Gate), live on-site headcount monitor, and 1-click CSV log export. | ✅ 100% Complete (10/10) |
-| **Presentation** | **10 Marks** | Comprehensive README documentation, pre-populated seed data, and 1-click demo role switcher bar. | ✅ 100% Complete (10/10) |
-| **TOTAL** | **100 Marks** | Full-stack production-ready delivery matching 100% of the assignment requirements. | 🌟 **100 / 100** |
-
----
-
-Developed with ❤️ for the **Tutedude MERN Stack Final Assignment**.
