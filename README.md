@@ -113,8 +113,8 @@ The application implements a secure **Role-Based Access Control (RBAC)** model:
 
 ### Step 1: Clone the Repository
 ```bash
-git clone <your-repository-url>
-cd final_assignment
+git clone https://github.com/dvgirl/final_assignment-reactjs.git
+cd final_assignment-reactjs
 ```
 
 ---
