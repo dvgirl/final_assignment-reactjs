@@ -19,8 +19,14 @@ import axios from 'axios';
  *    - Centralizes error messages returned by Express API controllers.
  */
 
+// Dynamic API Base URL:
+// - In Production (Vercel/Netlify): Uses VITE_API_URL pointing to your Render backend (e.g. https://my-backend.onrender.com)
+// - In Local Development: Falls back to '/api' which Vite proxies to http://localhost:5050
+const BACKEND_URL = import.meta.env.VITE_API_URL || '';
+const API_BASE_URL = BACKEND_URL ? `${BACKEND_URL.replace(/\/$/, '')}/api` : '/api';
+
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -84,7 +90,7 @@ export const passesAPI = {
   getAll: (params) => api.get('/passes', { params }),
   getByIdentifier: (identifier) => api.get(`/passes/view/${identifier}`),
   issueWalkIn: (data) => api.post('/passes/issue-walkin', data),
-  getPdfUrl: (identifier) => `/api/passes/${identifier}/pdf`,
+  getPdfUrl: (identifier) => `${BACKEND_URL ? BACKEND_URL.replace(/\/$/, '') : ''}/api/passes/${identifier}/pdf`,
 };
 
 // 5. Security Check-In & Check-Out (Gate scanner, Active headcount)
@@ -99,7 +105,7 @@ export const checkLogsAPI = {
 export const reportsAPI = {
   getStats: () => api.get('/reports/dashboard-stats'),
   getNotifications: () => api.get('/reports/notifications'),
-  getCsvUrl: () => '/api/reports/export-csv',
+  getCsvUrl: () => `${BACKEND_URL ? BACKEND_URL.replace(/\/$/, '') : ''}/api/reports/export-csv`,
 };
 
 export default api;
