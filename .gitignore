@@ -24,6 +24,7 @@ build/
 client/dist/
 client/build/
 *.local
+*.zip
 
 # 4. Logs & Debug Artifacts
 logs
