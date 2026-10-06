@@ -1,0 +1,19 @@
+{
+  "name": "visitor-pass-management-system",
+  "version": "1.0.0",
+  "description": "Full MERN Stack Visitor Pass Management System",
+  "main": "server/server.js",
+  "scripts": {
+    "install-all": "npm install && npm install --prefix server && npm install --prefix client",
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "seed": "npm run seed --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": ["mern", "visitor-management", "qr-code", "jwt", "react", "express", "mongodb"],
+  "author": "Tutedude Trainee Developer",
+  "license": "ISC"
+}

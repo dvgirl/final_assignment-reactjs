@@ -1,0 +1,500 @@
+/* ==========================================================================
+   PASSTRACK - VISITOR PASS MANAGEMENT SYSTEM
+   DESIGN SYSTEM & GLOBAL STYLES (LIGHT & CLASSY THEME)
+   
+   Beginner Guide:
+   - This file controls the colors, fonts, buttons, cards, and layout.
+   - CSS Variables (--primary, --bg-main, etc.) make changing colors easy.
+   - All classes use standard naming: .card, .btn, .badge, .form-input, etc.
+   ========================================================================== */
+
+/* 1. GOOGLE FONTS IMPORT (Inter for clean readability, Outfit for classy headings) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
+
+/* ==========================================================================
+   2. DESIGN TOKENS & CSS VARIABLES
+   ========================================================================== */
+:root {
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Outfit', 'Inter', sans-serif;
+
+  /* Classy Light Primary Colors (Professional Slate Blue) */
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-light: #eff6ff;
+  --primary-border: #bfdbfe;
+
+  /* Status Colors (Subtle & High Contrast) */
+  --success: #059669;
+  --success-light: #ecfdf5;
+  --success-border: #a7f3d0;
+
+  --warning: #d97706;
+  --warning-light: #fffbeb;
+  --warning-border: #fde68a;
+
+  --danger: #dc2626;
+  --danger-light: #fef2f2;
+  --danger-border: #fecaca;
+
+  --info: #0284c7;
+  --info-light: #f0f9ff;
+  --info-border: #bae6fd;
+
+  /* Neutrals & Surfaces (Clean Light Mode) */
+  --bg-main: #f8fafc;        /* Soft slate-gray background for pages */
+  --bg-card: #ffffff;        /* Pure white for cards, modals, dropdowns */
+  --bg-subtle: #f1f5f9;      /* Light gray for table headers and input backgrounds */
+  --bg-hover: #f8fafc;       /* Gentle hover background */
+
+  /* Text Colors */
+  --text-main: #0f172a;      /* Dark slate for high readability */
+  --text-muted: #475569;     /* Slate gray for secondary text and labels */
+  --text-light: #94a3b8;     /* Light slate for placeholders and timestamps */
+
+  /* Borders & Dividers */
+  --border-color: #e2e8f0;   /* Clean light border for cards and inputs */
+  --border-subtle: #f1f5f9;  /* Divider lines inside lists */
+  --border-focus: #3b82f6;   /* Active outline when clicking input */
+
+  /* Shadows (Soft & Elegant) */
+  --shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.06), 0 1px 2px -1px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+
+  /* Border Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+}
+
+/* ==========================================================================
+   3. CSS RESET & GLOBAL BASE STYLES
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-main);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   4. LAYOUT STRUCTURE (App Layout, Sidebar, Main Content)
+   ========================================================================== */
+.app-container {
+  display: flex;
+  min-height: calc(100vh - 45px);
+  background-color: var(--bg-main);
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-x: hidden;
+  background-color: var(--bg-main);
+}
+
+.page-wrapper {
+  padding: 1.75rem 2rem;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   5. CARDS & CONTAINERS
+   ========================================================================== */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: #cbd5e1;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* ==========================================================================
+   6. BUTTONS (Classy, Light & Crisp)
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: var(--shadow-xs);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.btn-success {
+  background: var(--success);
+  color: #ffffff;
+}
+
+.btn-success:hover {
+  background: #047857;
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: #ffffff;
+}
+
+.btn-danger:hover {
+  background: #b91c1c;
+}
+
+.btn-sm {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.8125rem;
+}
+
+.btn-lg {
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  border-radius: var(--radius-lg);
+}
+
+/* ==========================================================================
+   7. STATUS BADGES (Light, Classy, Pill Design)
+   ========================================================================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge-active, .badge-approved, .badge-checkedin {
+  background: var(--success-light);
+  color: var(--success);
+  border: 1px solid var(--success-border);
+}
+
+.badge-pending {
+  background: var(--warning-light);
+  color: var(--warning);
+  border: 1px solid var(--warning-border);
+}
+
+.badge-completed, .badge-checkedout {
+  background: var(--primary-light);
+  color: var(--primary);
+  border: 1px solid var(--primary-border);
+}
+
+.badge-rejected, .badge-revoked, .badge-expired {
+  background: var(--danger-light);
+  color: var(--danger);
+  border: 1px solid var(--danger-border);
+}
+
+/* ==========================================================================
+   8. FORM INPUTS & SELECT CONTROLS
+   ========================================================================== */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.375rem;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: var(--text-main);
+  background-color: #ffffff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.form-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* ==========================================================================
+   9. DATA TABLES (Clean Light Format)
+   ========================================================================== */
+.table-container {
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  box-shadow: var(--shadow-xs);
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.custom-table th {
+  background-color: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.custom-table td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: #1e293b;
+}
+
+.custom-table tr:hover td {
+  background-color: #f8fafc;
+}
+
+/* ==========================================================================
+   10. VISITOR ID BADGE CARD (Digital Pass Badge)
+   ========================================================================== */
+.visitor-badge-card {
+  width: 320px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  border: 1px solid #cbd5e1;
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+}
+
+.badge-header-strip {
+  background: #1e3a8a;
+  color: #ffffff;
+  padding: 1.25rem 1rem;
+}
+
+.badge-photo-wrapper {
+  margin-top: -32px;
+  display: flex;
+  justify-content: center;
+}
+
+.badge-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  background: #f1f5f9;
+  box-shadow: var(--shadow-sm);
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   11. PRINT STYLING (Guaranteed Single 1-Page Output)
+   ========================================================================== */
+@page {
+  size: A4 portrait;
+  margin: 10mm;
+}
+
+@media print {
+  /* Hide all surrounding app chrome */
+  nav,
+  header,
+  aside,
+  .quick-login-bar,
+  .navbar,
+  .sidebar,
+  .no-print,
+  .page-wrapper > *:not(.pass-modal-overlay),
+  button,
+  .btn {
+    display: none !important;
+  }
+
+  html, body, #root, .min-h-screen, .app-container, .main-content {
+    background: #ffffff !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+  }
+
+  /* Reset modal containers when printing */
+  .pass-modal-overlay {
+    position: static !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .pass-modal-card {
+    position: static !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    background: transparent !important;
+  }
+
+  /* 1-Page Badge Styling */
+  .visitor-badge-card {
+    position: relative !important;
+    margin: 10px auto !important;
+    width: 320px !important;
+    max-width: 320px !important;
+    border: 2px solid #0f172a !important;
+    border-radius: 16px !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    page-break-after: avoid !important;
+    page-break-before: avoid !important;
+    overflow: hidden !important;
+    display: block !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .badge-header-strip {
+    background: #1e3a8a !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color: #ffffff !important;
+  }
+
+  .badge-photo-wrapper {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .badge-avatar {
+    border: 3px solid #ffffff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
+/* ==========================================================================
+   12. RESPONSIVE BREAKPOINTS (Mobile & Tablet Friendly)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .page-wrapper {
+    padding: 1rem;
+  }
+  .form-grid-2, .form-grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .app-container {
+    flex-direction: column;
+  }
+}
